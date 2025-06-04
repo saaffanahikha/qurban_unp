@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Berqurban Bersama UNP Peduli</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+    :root {
+        --color-primary: #2c3e50;
+        --color-secondary: #18bc9c;
+        --color-light: #ecf0f1;
+        --color-dark: #34495e;
+        --color-accent: #27ae60;
+        --border-radius: 10px;
+        --shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(45deg, #18bc9c, #2c3e50);
+        color: var(--color-dark);
+        margin: 0;
+        padding: 20px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 900px;
+        margin-bottom: 20px;
+    }
+
+    .header {
+        background: var(--color-light);
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow);
+        padding: 30px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .logo {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 15px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid var(--color-secondary);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .header h2 {
+        color: var(--color-primary);
+        font-weight: 600;
+        margin: 15px 0 10px 0;
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+    }
+
+    .header p {
+        color: var(--color-dark);
+        font-weight: 300;
+        margin: 0;
+        font-size: 0.9rem;
+        opacity: 0.8;
+    }
+
+    h1 {
+        color: var(--color-light);
+        font-weight: 600;
+        margin-bottom: 40px;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        text-align: center;
+        font-size: 2rem;
+    }
+
+    main {
+        background: var(--color-light);
+        width: 100%;
+        max-width: 900px;
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow);
+        padding: 30px 40px;
+    }
+
+    section {
+        margin-bottom: 40px;
+    }
+
+    h2 {
+        color: var(--color-primary);
+        font-weight: 600;
+        margin-bottom: 15px;
+        border-bottom: 3px solid var(--color-secondary);
+        padding-bottom: 8px;
+    }
+
+    form {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        align-items: flex-end;
+    }
+
+    label {
+        flex-basis: 100%;
+        font-weight: 600;
+        margin-bottom: 5px;
+        color: var(--color-primary);
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="number"] {
+        padding: 12px 15px;
+        flex: 1 1 300px;
+        border-radius: var(--border-radius);
+        border: 2px solid var(--color-primary);
+        transition: border-color 0.3s ease;
+        font-size: 1rem;
+        outline: none;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="number"]:focus {
+        border-color: var(--color-secondary);
+        box-shadow: 0 0 6px var(--color-secondary);
+    }
+
+    button {
+        background-color: var(--color-secondary);
+        color: var(--color-light);
+        border: none;
+        padding: 14px 32px;
+        border-radius: var(--border-radius);
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        flex-shrink: 0;
+        box-shadow: 0 4px 8px rgba(24,188,156,0.5);
+    }
+
+    button:hover {
+        background-color: var(--color-accent);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 16px rgba(24,188,156,0.7);
+    }
+
+    button:active {
+        transform: translateY(0);
+        box-shadow: 0 4px 8px rgba(24,188,156,0.5);
+    }
+
+    #report {
+        margin-top: 20px;
+        overflow-x: auto;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 1rem;
+    }
+
+    th, td {
+        padding: 12px 15px;
+        border-bottom: 1px solid #ddd;
+        text-align: left;
+        color: var(--color-primary);
+    }
+
+    th {
+        background-color: var(--color-secondary);
+        color: white;
+        font-weight: 600;
+        position: sticky;
+        top: 0;
+    }
+
+    tbody tr:hover {
+        background-color: #d1f0e6;
+    }
+
+    h4 {
+        margin-top: 20px;
+        color: var(--color-primary);
+        font-weight: 700;
+    }
+
+    @media screen and (max-width: 600px) {
+        .header {
+            padding: 20px;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+        }
+
+        .header h2 {
+            font-size: 1.2rem;
+        }
+
+        .header p {
+            font-size: 0.8rem;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+        }
+
+        form {
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        button {
+            flex-grow: 1;
+            width: 100%;
+        }
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <img src="logo unp.jpg" alt="Logo Universitas" class="logo">
+        <h2>UNIVERSITAS NEGERI PADANG</h2>
+        <p>Jalan Prof. Dr. Hamka, Air Tawar Padang, Sumatera Barat</p>
+    </div>
+</div>
+
+<h1>Berqurban Bersama UNP Peduli</h1>
+<main>
+    <section>
+        <h2>Pendaftaran Peserta Qurban</h2>
+        <form id="registrationForm">
+            <label for="name">Nama:</label>
+            <input type="text" id="name" placeholder="Masukkan nama lengkap" required />
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="contoh@unp.ac.id" required />
+            <label for="nominal">Nominal Qurban (Rp):</label>
+            <input type="number" id="nominal" placeholder="Masukkan nominal qurban" required min="0" step="1000" />
+            <button type="submit">Daftar</button>
+        </form>
+    </section>
+
+    <section>
+        <h2>Input Potongan Gaji</h2>
+        <form id="salaryDeductionForm">
+            <label for="deduction">Potongan Gaji per Bulan (Rp):</label>
+            <input type="number" id="deduction" placeholder="Masukkan potongan per bulan" required min="0" step="1000" />
+            <button type="submit">Input Potongan</button>
+        </form>
+    </section>
+
+    <section>
+        <h2>Laporan Peserta Qurban</h2>
+        <a href="laporan.html"><button id="generateReport">Generate Laporan</button></a>
+        <div id="report"></div>
+    </section>
+</main>
+
+<script>
+    let participants = [];
+    let monthlyDeduction = 0;
+
+    document.getElementById('registrationForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const nominal = parseFloat(document.getElementById('nominal').value);
+
+        if (!name || !email || isNaN(nominal) || nominal <= 0) {
+            alert('Mohon isi data dengan benar');
+            return;
+        }
+
+        participants.push({ name, email, nominal });
+        alert(`Peserta ${name} berhasil didaftarkan!`);
+        this.reset();
+    });
+
+    document.getElementById('salaryDeductionForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const deduction = parseFloat(document.getElementById('deduction').value);
+        if (isNaN(deduction) || deduction <= 0) {
+            alert('Masukkan potongan gaji per bulan yang valid!');
+            return;
+        }
+
+        monthlyDeduction = deduction;
+        alert(`Potongan gaji per bulan sebesar Rp ${deduction.toLocaleString('id-ID')} berhasil disimpan!`);
+        this.reset();
+    });
+
+    document.getElementById('generateReport').addEventListener('click', function() {
+        if (participants.length === 0) {
+            alert('Belum ada peserta yang didaftarkan.');
+            return;
+        }
+
+        if (monthlyDeduction === 0) {
+            alert('Belum ada data potongan gaji yang dimasukkan.');
+            return;
+        }
+
+        let totalPotongan = monthlyDeduction * participants.length * 12; // 1 tahun (12 bulan)
+        let reportContent = '<table><thead><tr><th>Nama</th><th>Email</th><th>Nominal Qurban (Rp)</th><th>Potongan / Bulan (Rp)</th><th>Potongan / Tahun (Rp)</th></tr></thead><tbody>';
+
+        participants.forEach(participant => {
+            // Assuming potongan per bulan sesuai input bagian penggajian, 
+            // potongan per tahun adalah potongan per bulan * 12
+            let potonganTahun = monthlyDeduction * 12;
+            reportContent += `<tr>
+                <td>${participant.name}</td>
+                <td>${participant.email}</td>
+                <td>${participant.nominal.toLocaleString('id-ID')}</td>
+                <td>${monthlyDeduction.toLocaleString('id-ID')}</td>
+                <td>${potonganTahun.toLocaleString('id-ID')}</td>
+            </tr>`;
+        });
+
+        reportContent += '</tbody></table>';
+        reportContent += `<h4>Total Potongan Seluruhnya: Rp ${totalPotongan.toLocaleString('id-ID')}</h4>`;
+
+        document.getElementById('report').innerHTML = reportContent;
+    });
+</script>
+</body>
+</html>
